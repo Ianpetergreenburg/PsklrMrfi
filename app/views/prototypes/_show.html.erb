@@ -5,4 +5,11 @@
     <li>Height: <%= @prototype.height %></li>
     <li>Weight: <%= @prototype.weight %></li>
   </ul>
+
+<%= form_for @robot, url: {action: "create"} do |robot_form| %>
+  <%= robot_form.text_field :name %>
+  <%= fields_for @robot.contact_detail do |contact_detail_form| %>
+    <%= contact_detail_form.text_field :phone_number %>
+  <% end %>
+<% end %>
 </div>
