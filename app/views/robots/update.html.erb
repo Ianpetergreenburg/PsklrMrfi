@@ -1,0 +1,24 @@
+<% if @robot.pending == false %>
+  <form id="update_designation" action='/robots/<%= @robot.id %>' method='PATCH'>
+    <div align='center'>
+      <input type="text" value="<%= @robot.designation %> 
+      <input type="submit" value="Redesignate">    
+    </div>
+  </form>
+
+  <form id="remove" action='/robots/<%= @robot.id %>' method='DELETE'>
+    <div align='center'>
+      <input type="submit" value="Remove">    
+    </div>
+  </form>
+
+  <% else %>
+
+  <form id="add_to_inventory" action='/robots/<%= @robot.id %>' method='PATCH'>
+    <div align='center'>
+      <input type="submit" value="Add to Inventory">  
+    </div>
+  </form>
+
+<% end %>
+</div>

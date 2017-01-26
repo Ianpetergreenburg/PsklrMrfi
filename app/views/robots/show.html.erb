@@ -1,6 +1,6 @@
-<h1>Here's your specific robot</h1>
+<div align='center'><h1>Here's your specific robot</h1>
 
-<h3><%= @robot.designation%></h3>
+<h3>"<%= @robot.designation%>"</h3>
 <h3>Model No:<%= @robot.model_no%> </h3>
 </h3>
 
@@ -12,4 +12,20 @@
   <p>Height: <%= @robot.height%> Yds</p>
 </div>
 
+<% if @robot.pending == false %>
 
+  <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
+    <%= submit_tag("Re-designate")%>
+  <% end %>
+
+  <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
+    <%= submit_tag("Remove")%>
+  <% end %>
+
+<% else %>
+
+  <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
+    <%= submit_tag("Add to Inventory") %>
+  <% end %>
+
+<% end %>

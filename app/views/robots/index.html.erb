@@ -6,10 +6,12 @@
 
 <div id="robots_viewer">
   <h3>Robots In Inventory</h3>
-  <% @robots.each do |robot| %>
+  <% @robots.map do |robot| %>
     <ul>
       <li>
-      <%= link_to robot.designation, robot %>
+       <% if robot.pending == false %>
+        <%= link_to robot.designation, robot %>
+       <% end %>     
       </li>
     </ul>
   <% end %>
@@ -17,7 +19,7 @@
 
 <div id="pending_viewer">
   <h3>In Queue</h3>
-  <% @robots.each do |robot| %>
+  <% @robots.map do |robot| %>
     <% if robot.pending == true %>
     <%= link_to robot.model_no, robot %>
     <% end %>
