@@ -8,7 +8,7 @@ end
 def create
   user = User.find_by(username: params[:session][:username].downcase)
   if user && user.authenticate(params[:session][:password])
-    render  action: 'robots#show'
+    redirect_to  robots_path
   else
     flash[:notice] = "You must be logged in with proper credentials"
     render 'new'
