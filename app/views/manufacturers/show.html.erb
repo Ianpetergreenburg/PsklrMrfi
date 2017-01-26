@@ -1,0 +1,5 @@
+<h1><%= @manufacturer.name %></h1>
+
+<% @manufacturer.prototypes.each do |prototype| %>
+  <h2><%= link_to prototype.model_no, prototype, remote: true, id: "prototype-info-link" %></h2>
+<% end %>
