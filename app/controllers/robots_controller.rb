@@ -1,4 +1,5 @@
 class RobotsController < ApplicationController
+  before_action :set_robot, only: [:show, :edit, :update, :destroy]
 
   def index
     @robots = Robot.all
@@ -14,27 +15,27 @@ class RobotsController < ApplicationController
   end
 
   def show
-    @robot = Robot.find(params[:id])
   end
 
   def edit
-    @robot = Robot.find(params[:id])
   end
 
   def update
-    @robot = Robot.find(params[:id])
     @robot.update(params[:designation])
     redirect_to robot_path(@robot)
   end
 
   def destroy
-    @robot = Robot.find(params[:id])
     @robot.destroy
     redirect_to robots_path
   end
 
 
   private
+
+  def set_robot
+    @robot = Robot.find(params[:id])
+  end
 
   def robot_params
     params.require(:robot).permit(:designation, :height, :weight, :model_no, :pending)

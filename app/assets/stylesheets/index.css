@@ -1,0 +1,47 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#main-homepage {
+  width: 100%;
+  height: 100%;
+}
+
+.manufacturer_viewer_left {
+    width: 25%;
+    height: 100%;
+    float: left;
+    /*background-color: rosybrown;*/
+    border-collapse: collapse;
+    border: solid 2px black;
+}
+
+.robots_viewer_middle {
+    width: 50%;
+    height: 100%;
+    float: left;
+    /*background-color: royalblue;*/
+    border-collapse: collapse;
+    border: solid 2px black;
+    padding: 10px;
+}
+
+.pending_viewer_right {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  float: right;
+  /*background-color: yellow;*/
+  border-collapse: collapse;
+  border: solid 2px black;
+  padding: 10px;
+}
+
+.top-title {
+  width: 100%;
+  border: solid 2px black;
+  padding: 10px;
+  text-align: center;
+}

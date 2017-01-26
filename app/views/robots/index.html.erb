@@ -1,39 +1,46 @@
-<h1>PSKLRMRFI</h1>
-<div id="manufacturer_viewer">
-  <h3>Manufacturers</h3>
-    <% @manufacturers.each do |manufacturer| %>
-    <ul>
-      <li>
-      <%= link_to manufacturer.name, manufacturer %>
-      </li>
-    </ul>
-  <% end %>
 
+<div class="top-title">
+  <h1>PSKLRMRFI</h1>
 </div>
 
-<div id="robots_viewer">
-  <h3>Robots In Inventory</h3>
-  <% @robots.each do |robot| %>
-    <ul>
-      <% unless robot.pending %>
-        <li>
-          <%= link_to robot.designation, robot %>
-        </li>
+<main id="main-homepage">
+  <aside id="manufacturers-leftside-container">
+    <section class="manufacturer_viewer_left">
+      <h3>Manufacturers</h3>
+      <% @manufacturers.each do |manufacturer| %>
+        <ul>
+          <li>
+          <%= link_to manufacturer.name, manufacturer %>
+          </li>
+        </ul>
       <% end %>
-    </ul>
-  <% end %>
-</div>
+    </section>
+  </aside>
 
-<div id="pending_viewer">
-  <h3>In Queue</h3>
-  <% @robots.each do |robot| %>
-    <ul>
-      <% if robot.pending %>
-        <li>
-          <%= link_to robot.model_no, robot %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
+  <section class="robots_viewer_middle">
+    <h3>Robots In Inventory</h3>
+    <% @robots.each do |robot| %>
+      <ul>
+        <% unless robot.pending %>
+          <li>
+            <%= link_to robot.designation, robot %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
 
+  <section class="pending_viewer_right">
+    <h3>In Queue</h3>
+    <% @robots.each do |robot| %>
+      <ul>
+        <% if robot.pending %>
+          <li>
+            <%= link_to robot.model_no, robot %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
+
+</main>
