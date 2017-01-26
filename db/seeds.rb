@@ -1,12 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Manufacturer.delete_all
+Robot.delete_all
+
+Manufacturer.create(name: "US Robotics")
+Manufacturer.create(name: "Mechanical Men Group")
+Manufacturer.create(name: "Cyberdyne Systems")
+Manufacturer.create(name: "Barry's Automotons")
+Manufacturer.create(name: "The Confederation of Ham Manufacturing Concern")
 
 
 def gen_model_no
@@ -19,5 +20,4 @@ def gen_model_no
   model_no = (manu.sample + suffix)
 end
 
-4.times { Robot.create(designation: Faker::StarWars.droid, height: Faker::Number.number(2), weight: Faker::Number.number(2), model_no:(gen_model_no))}
-
+15.times { Robot.create(designation: Faker::StarWars.droid, height: Faker::Number.number(2), weight: Faker::Number.number(2), model_no:(gen_model_no))}
