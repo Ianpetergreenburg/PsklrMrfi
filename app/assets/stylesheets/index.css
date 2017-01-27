@@ -37,6 +37,25 @@ body, html {
 
 }
 
+.header_left {
+  display: inline-flex;
+  max-width: 50%;
+  margin-left: 2em;
+}
+
+.header_mid {
+  display: inline-flex;
+  max-width: 50%;
+  padding-left: 10em;
+}
+
+.header_right {
+  display: inline-flex;
+  max-width: 50%;
+  padding-left: 10em;
+
+}
+
 .pending_viewer_right {
   width: 20%;
   height: 75%;
