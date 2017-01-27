@@ -13,7 +13,7 @@ module SessionsHelper
   end
 
   def login(user)
-    session[:id] = @user.id
+    session[:id] = user.id
   end
 
   def logout
