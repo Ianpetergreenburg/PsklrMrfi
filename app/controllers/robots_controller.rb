@@ -22,7 +22,7 @@ class RobotsController < ApplicationController
   end
 
   def update
-    @robot.update(params[:designation])
+    @robot.update(robot_params)
     redirect_to robot_path(@robot)
   end
 
