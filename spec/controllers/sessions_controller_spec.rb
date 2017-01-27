@@ -15,7 +15,7 @@ describe SessionsController do
 
     it "creates a user session" do
       post :create, params: credentials
-      expect(session[:id]).to eq user.id
+      expect(session[:user_id]).to eq user.id
     end
   end
 
