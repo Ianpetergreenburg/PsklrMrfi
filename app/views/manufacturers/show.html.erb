@@ -1,10 +1,11 @@
 <nav>
-  <a class='home-link' href='/robots'>Home</a> 
+  <a class='home-link' href='/robots'>Home</a>
 </nav>
 
+<section class="individual-item-container">
+  <h1><%= @manufacturer.name %></h1>
 
-<h1><%= @manufacturer.name %></h1>
-
-<% @manufacturer.prototypes.each do |prototype| %>
-  <h2><%= link_to prototype.model_no, prototype, remote: true, id: "prototype-info-link-#{prototype.id}" %></h2>
-<% end %>
+  <% @manufacturer.prototypes.each do |prototype| %>
+    <h2><%= link_to prototype.model_no, prototype, remote: true, id: "prototype-info-link-#{prototype.id}" %></h2>
+  <% end %>
+</section>

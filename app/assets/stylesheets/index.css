@@ -30,7 +30,6 @@ body, html {
     display: inline-block;
     border: solid 2px black;
     border-radius: 10px;
-    padding: 10px;
     border-spacing: 10px;
     background-color: #F6F8DC;
 }
@@ -45,7 +44,6 @@ body, html {
   border-collapse: collapse;
   border: solid 2px black;
   border-radius: 10px;
-  padding: 10px;
   border-spacing: 10px;
   background-color: #F6F8DC;
 }
@@ -73,17 +71,5 @@ ul {
 }
 
 li {
-  font-size: 1em;
-}
-
-
-.individual-item-container {
-  width: 45%;
-  height: 75%;
-  margin: auto;
-  border: solid 2px black;
-  border-radius: 10px;
-  padding: 10px;
-  border-spacing: 10px;
-  background-color: #F6F8DC;
+  font-size: 16px;
 }
