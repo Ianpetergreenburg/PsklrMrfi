@@ -49,6 +49,7 @@ body, html {
   padding: 10px;
   border-spacing: 10px;
   background-color: #F6F8DC;
+  overflow: scroll
 }
 
 .top-title {
