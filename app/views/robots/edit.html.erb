@@ -1,0 +1,24 @@
+<nav>
+  <a class='home-link' href='/robots'>Home</a> 
+</nav>
+
+<h4>
+  Current Designation:
+  <%= @robot.designation%>
+</h4>
+
+<%= form_tag("/robots/#{@robot.id}", method: "PATCH") do %>
+  <%= label_tag(:designation, "New Designation") %>
+  <%= text_field(:robot, :designation, value: nil) %>
+  <%= submit_tag("Re-designate") %>
+<% end %>
+
+<%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
+  <%= submit_tag("Remove")%>
+<% end %>
+
+
+
+
+
+
