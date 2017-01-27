@@ -2,12 +2,20 @@ class RobotsController < ApplicationController
   before_action :set_robot, only: [:show, :edit, :update, :destroy]
 
   def index
-    @robots = Robot.all
-    @manufacturers = Manufacturer.all
+    if logged_in?
+      @robots = Robot.all
+      @manufacturers = Manufacturer.all
+    else
+      redirect_to '/'
+    end
   end
 
   def new
-    @robot = Robot.new
+    if logged_in?
+      @robot = Robot.new
+    else
+      redirect_to '/'
+    end
   end
 
   def create
