@@ -12,6 +12,7 @@ class RobotsController < ApplicationController
 
   def create
     @robot = Robot.create(robot_params)
+    redirect_to robots_path
   end
 
   def show
