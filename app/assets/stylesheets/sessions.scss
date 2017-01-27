@@ -1,3 +1,56 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#login-header {
+  display: inline-flex;
+  vertical-align: center;
+}
+
+#login-container {
+  margin: auto;
+  padding: 3em;
+  max-width: 30%;
+  background-color: grey;
+  border: 2px solid #D7D4CF;
+  border-radius: 10px;
+  vertical-align: center;
+  text-color: #D7D4CF;
+  word-spacing: .3em;
+  font-family: impact;
+}
+
+#gtfo {
+  margin: auto;
+  padding: .3em;
+  max-width: 50%;
+  border: 2px solid #D7D4CF;
+  border-radius: 10px;
+  margin-top: 20%;
+  margin-bottom: 1em;
+  background-color: grey;
+  font-family: impact;
+  color: orange;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#welcome_container {
+  margin: auto;
+  max-width: 75%;
+  border: 2px solid #D7D4CF;
+  border-radius: 10px;
+
+  margin-bottom: 1em;
+  background-color: grey;
+  font-family: impact;
+  color: orange;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#welcome {
+  text-decoration: none;
+  text-color: white;
+}
