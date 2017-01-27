@@ -1,0 +1,24 @@
+
+.individual-item-container {
+  text-align: center;
+  width: 45%;
+  height: 75%;
+  margin: auto;
+  border: solid 2px black;
+  border-radius: 10px;
+  border-spacing: 10px;
+  background-color: #F6F8DC;
+
+}
+
+.center-show-info {
+    margin-top: 50px;
+}
+
+.robot_show_title {
+  font-size: 32px;
+}
+
+.robot_show_designation, .robot_show_model_no {
+  font-size: 24px;
+}
