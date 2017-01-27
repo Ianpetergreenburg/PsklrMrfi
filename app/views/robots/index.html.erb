@@ -4,8 +4,13 @@
 </div>
 
 <main id="main-homepage">
+  
+  <h3 class='header_left'>Manufacturers</h3>
+  <h3 class='header_mid'>Robots In Inventory</h3>
+  <h3 class='header_right'>In Queue</h3>
+  <br>
   <section class="manufacturer_viewer_left">
-    <h3>Manufacturers</h3>
+    
     <% @manufacturers.each do |manufacturer| %>
       <ul>
         <li>
@@ -15,8 +20,10 @@
     <% end %>
   </section>
 
+   
+  
   <section class="robots_viewer_middle">
-    <h3>Robots In Inventory</h3>
+   
     <% @robots.each do |robot| %>
       <ul>
         <% unless robot.pending %>
@@ -29,8 +36,10 @@
     <% end %>
   </section>
 
+  
+  
   <section class="pending_viewer_right">
-    <h3>In Queue</h3>
+
     <% @robots.each do |robot| %>
       <ul>
         <% if robot.pending %>
