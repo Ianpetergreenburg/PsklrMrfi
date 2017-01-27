@@ -3,7 +3,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
     @manufacturer = Manufacturer.find(@prototype.manufacturer_id)
     respond_to do |format|
-      format.html { render 'show'}
+      format.html { render '_show', layout: false}
       format.js
     end
   end

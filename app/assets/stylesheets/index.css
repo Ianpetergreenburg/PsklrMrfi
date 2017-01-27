@@ -8,7 +8,6 @@ body, html {
 #main-homepage {
   width: 100%;
   height: 100%;
-
 }
 
 .manufacturer_viewer_left {
@@ -32,8 +31,6 @@ body, html {
     display: inline-block;
     border: solid 2px black;
     border-radius: 10px;
-    padding: 10px;
-    columns: 100px 3;
     border-spacing: 10px;
     background-color: #F6F8DC;
     text-align: center;
@@ -50,7 +47,6 @@ body, html {
   border-collapse: collapse;
   border: solid 2px black;
   border-radius: 10px;
-  padding: 10px;
   border-spacing: 10px;
   background-color: #F6F8DC;
 
@@ -59,8 +55,10 @@ body, html {
 .top-title {
   width: 100%;
   border: solid 2px black;
-  padding: 10px;
+  margin-bottom: 10px;
   text-align: center;
+  background-color: #F6F8DC;
+  border-radius: 10px;
 }
 
 a {
@@ -78,17 +76,5 @@ ul {
 }
 
 li {
-
-}
-
-
-.individual-item-container {
-  width: 45%;
-  height: 75%;
-  margin: auto;
-  border: solid 2px black;
-  border-radius: 10px;
-  padding: 10px;
-  border-spacing: 10px;
-  background-color: #F6F8DC;
+  font-size: 16px;
 }

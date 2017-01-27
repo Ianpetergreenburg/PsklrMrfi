@@ -43,7 +43,7 @@ def gen_proto_model_no(manufacturer)
   initials + suffix
 end
 
-User.create(username: 'admin', password: 'pw')
+User.create(username: 'the_commish', password: 'mutantkiller')
 
 rand(8..15).times { Robot.create(designation: Faker::StarWars.droid, height: Faker::Number.number(2), weight: Faker::Number.number(2), model_no:(gen_model_no))}
 rand(8..15).times { Robot.create(height: Faker::Number.number(2), weight: Faker::Number.number(2), model_no:(gen_model_no), pending: true)}
@@ -55,5 +55,3 @@ Manufacturer.names.each { |name| Manufacturer.find_or_create_by(name: name) }
   prototype.model_no = gen_proto_model_no(prototype.manufacturer.name)
   prototype.save
 end
-
-

@@ -1,5 +1,5 @@
 <nav>
-  <a class='home-link' href='/robots'>Home</a> 
+  <a class='home-link' href='/robots'>Home</a>
 </nav>
 
 <h4>
@@ -10,6 +10,7 @@
 <%= form_tag("/robots/#{@robot.id}", method: "PATCH") do %>
   <%= label_tag(:designation, "New Designation") %>
   <%= text_field(:robot, :designation, value: nil) %>
+  <%= hidden_field(:robot, :pending, value: false) %>
   <%= submit_tag("Re-designate") %>
 <% end %>
 
