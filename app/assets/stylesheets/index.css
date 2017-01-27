@@ -26,6 +26,7 @@ body, html {
     border-collapse: collapse;
     border: solid 2px black;
     padding: 10px;
+    columns: 100px 3;
 }
 
 .pending_viewer_right {
