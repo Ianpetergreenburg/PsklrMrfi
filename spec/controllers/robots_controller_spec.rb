@@ -3,7 +3,14 @@ require 'rails_helper'
 describe RobotsController do
   let!(:robot) { create(:robot) }
 
-  describe 'GET #index' do
+  describe 'GET #index when logged in' do
+    before :each do
+      create(:robot)
+      user = FactoryGirl.create(:user)
+      credentials = {session: {username: user.username, password: 'mutantkiller'}}
+      post :create, params: credentials
+    end
+
     it 'responds with status code 200' do
       get :index
       expect(response).to have_http_status 200
