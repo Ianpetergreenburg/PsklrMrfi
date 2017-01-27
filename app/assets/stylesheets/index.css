@@ -8,7 +8,7 @@ body, html {
 #main-homepage {
   width: 100%;
   height: 100%;
-  
+
 }
 
 .manufacturer_viewer_left {
@@ -23,7 +23,7 @@ body, html {
     background-color: #F6F8DC;
 }
 
-.robots_viewer_middle, .individual-item-container {
+.robots_viewer_middle {
     width: 45%;
     height: 75%;
     margin-left: 6%;
@@ -56,4 +56,33 @@ body, html {
   border: solid 2px black;
   padding: 10px;
   text-align: center;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #C0C0C0;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+
+}
+
+
+.individual-item-container {
+  width: 45%;
+  height: 75%;
+  margin: auto;
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 10px;
+  border-spacing: 10px;
+  background-color: #F6F8DC;
 }
