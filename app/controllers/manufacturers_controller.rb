@@ -1,4 +1,10 @@
 class ManufacturersController < ApplicationController
+  
+  def index
+    
+  end
+
+
   def show
     @manufacturer = Manufacturer.find(params[:id])
     respond_to do |format|
@@ -6,4 +12,5 @@ class ManufacturersController < ApplicationController
       format.js
     end
   end
+
 end
