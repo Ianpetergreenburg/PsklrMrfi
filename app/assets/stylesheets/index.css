@@ -20,6 +20,7 @@ body, html {
     border-radius: 10px;
     border-spacing: 10px;
     background-color: #F6F8DC;
+    text
 }
 
 .robots_viewer_middle {
@@ -32,6 +33,27 @@ body, html {
     border-radius: 10px;
     border-spacing: 10px;
     background-color: #F6F8DC;
+    text-align: center;
+
+}
+
+.header_left {
+  display: inline-flex;
+  max-width: 50%;
+  margin-left: 2em;
+}
+
+.header_mid {
+  display: inline-flex;
+  max-width: 50%;
+  padding-left: 10em;
+}
+
+.header_right {
+  display: inline-flex;
+  max-width: 50%;
+  padding-left: 10em;
+
 }
 
 .pending_viewer_right {
@@ -47,6 +69,7 @@ body, html {
   border-spacing: 10px;
   background-color: #F6F8DC;
   overflow: auto;
+
 }
 
 .robots-section {
@@ -81,6 +104,7 @@ a:hover {
 
 ul {
   list-style-type: none;
+  align-content: center;
 }
 
 li {
