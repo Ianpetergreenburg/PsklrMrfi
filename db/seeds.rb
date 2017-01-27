@@ -1,5 +1,5 @@
 require 'faker'
-require 'HTTParty'
+#require 'HTTParty'
 
 #  Manufacturer.delete_all
 # # Robot.delete_all
