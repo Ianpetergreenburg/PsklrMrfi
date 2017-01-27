@@ -1,5 +1,5 @@
 <nav>
-  <a class='home-link' href='/robots'>Home</a> 
+  <%= link_to 'Home', robots_path, class: 'home-link' %>
 </nav>
 
 
@@ -16,10 +16,10 @@
     <% end %>
       </div>
   <div class='robot_show_model_no'>
-  Model No:<%= @robot.model_no%> 
+  Model No:<%= @robot.model_no%>
   </div>
-  <% end %>   
-    
+  <% end %>
+
 
 <div>
   <p>Weight: <%= @robot.weight%> Tons</p>
@@ -30,7 +30,7 @@
 </div>
 
 <% if @robot.pending == false %>
-  
+
   <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
     <%= submit_tag("Re-designate")%>
   <% end %>
