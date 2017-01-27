@@ -12,6 +12,7 @@ module SessionsHelper
     current_user == User.find_by(username: "the_commish")
   end
 
+
   def log_in(user)
     session[:user_id] = user.id
   end
