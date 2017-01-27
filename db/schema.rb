@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126001958) do
+ActiveRecord::Schema.define(version: 20170127203110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20170126001958) do
   end
 
   create_table "prototypes", force: :cascade do |t|
-    t.integer  "height",          null: false
-    t.integer  "weight",          null: false
-    t.string   "model_no",        null: false
-    t.integer  "manufacturer_id", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "height",                                  null: false
+    t.integer  "weight",                                  null: false
+    t.string   "model_no",                                null: false
+    t.integer  "manufacturer_id",                         null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.decimal  "price",           precision: 8, scale: 2
     t.index ["manufacturer_id"], name: "index_prototypes_on_manufacturer_id", using: :btree
   end
 
@@ -36,9 +37,10 @@ ActiveRecord::Schema.define(version: 20170126001958) do
     t.integer  "height"
     t.integer  "weight"
     t.string   "model_no"
-    t.boolean  "pending",     default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "pending",                             default: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
+    t.decimal  "price",       precision: 8, scale: 2
   end
 
   create_table "users", force: :cascade do |t|

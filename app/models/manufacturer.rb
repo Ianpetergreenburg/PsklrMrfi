@@ -3,7 +3,7 @@ class Manufacturer < ActiveRecord::Base
 
 
   def self.names
-    ["US Robotics", "Mechanical Men Group", "Cyberdyne Systems", "Barry's Automotons", "The Confederate of Ham Manufacturing Concern"]
+    manufacturers_names
   end
 
 
