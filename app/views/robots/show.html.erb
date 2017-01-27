@@ -2,47 +2,42 @@
   <%= link_to 'Home', robots_path, class: 'home-link' %>
 </nav>
 
-
-<div align='center'>
-  <% if @robot.pending %>
-    <h1>Pending Bot</h1>
-  <% else %>
-    <div class=robot_show_title>
-    <% if !@robot.designation.nil? %>
-      Your Robot
+  <section class="individual-item-container">
+    <div class="center-show-info">
+      <% if @robot.pending %>
+        <h1>Pending Bot</h1>
+      <% else %>
+        <% if !@robot.designation.nil? %>
+        <div class="robot_show_title">
+          Your Robot
+          </div>
+          <div class='robot_show_designation'>
+            "<%= @robot.designation%>"
+          </div>
+        <% end %>
+      <div class='robot_show_model_no'>
+        Model No: <%= @robot.model_no%>
       </div>
-      <div class='robot_show_designation'>
-      "<%= @robot.designation%>"
     <% end %>
-      </div>
-  <div class='robot_show_model_no'>
-  Model No:<%= @robot.model_no%>
-  </div>
+
+    <div>
+      Weight: <%= @robot.weight%> Tons
+    </div>
+
+    <div>
+      Height: <%= @robot.height%> Yds
+    </div>
+
+  <% if @robot.pending == false %>
+    <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
+      <%= submit_tag("Re-designate")%>
+    <% end %>
+    <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
+      <%= submit_tag("Remove")%>
+    <% end %>
+  <% else %>
+    <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
+      <%= submit_tag("Add to Inventory") %>
+    <% end %>
   <% end %>
-
-
-<div>
-  <p>Weight: <%= @robot.weight%> Tons</p>
-</div>
-
-<div>
-  <p>Height: <%= @robot.height%> Yds</p>
-</div>
-
-<% if @robot.pending == false %>
-
-  <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
-    <%= submit_tag("Re-designate")%>
-  <% end %>
-
-  <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
-    <%= submit_tag("Remove")%>
-  <% end %>
-
-<% else %>
-
-  <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
-    <%= submit_tag("Add to Inventory") %>
-  <% end %>
-
-<% end %>
+  </section>
