@@ -4,51 +4,59 @@
 </div>
 
 <main id="main-homepage">
-  
-  <h3 class='header_left'>Manufacturers</h3>
-  <h3 class='header_mid'>Robots In Inventory</h3>
-  <h3 class='header_right'>In Queue</h3>
-  <br>
-  <section class="manufacturer_viewer_left">
-    
-    <% @manufacturers.each do |manufacturer| %>
-      <ul>
-        <li>
-        <%= link_to manufacturer.name, manufacturer %>
-        </li>
-      </ul>
-    <% end %>
-  </section>
 
-   
-  
-  <section class="robots_viewer_middle">
-   
-    <% @robots.each do |robot| %>
-      <ul>
-        <% unless robot.pending %>
-          <li>
-            <%= link_to robot.designation, robot %>
-          </li>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Manufacturers</a></li>
+    <li><a href="#tab2" data-toggle="tab">Robots In Inventory</a></li>
+    <li><a href="#tab3" data-toggle="tab">Queue</a></li>
+  </ul>
+
+  <div class="tab-content">
+
+    <div class="tab-pane active" id="tab1">
+      <section class="robots-section">
+        <h3>Manufacturers</h3>
+        <% @manufacturers.each do |manufacturer| %>
+          <ul>
+            <li>
+            <%= link_to manufacturer.name, manufacturer %>
+            </li>
+          </ul>
         <% end %>
-      </ul>
+      </section>
+    </div><!-- end tab-pane -->
 
-    <% end %>
-  </section>
-
-  
-  
-  <section class="pending_viewer_right">
-
-    <% @robots.each do |robot| %>
-      <ul>
-        <% if robot.pending %>
-          <li>
-            <%= link_to robot.model_no, robot %>
-          </li>
+    <div class="tab-pane" id="tab2">
+      <section class="robots-section">
+        <h3>Robots In Inventory</h3>
+        <% @robots.each do |robot| %>
+          <ul>
+            <% unless robot.pending %>
+              <li>
+                <%= link_to robot.designation, robot %>
+              </li>
+            <% end %>
+          </ul>
         <% end %>
-      </ul>
-    <% end %>
-  </section>
+      </section>
+    </div><!-- end tab-pane -->
 
+    <div class="tab-pane" id="tab3">
+
+      <section class="robots-section">
+        <h3>In Queue</h3>
+        <% @robots.each do |robot| %>
+          <ul>
+            <% if robot.pending %>
+              <li>
+                <%= link_to robot.model_no, robot %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </section>
+
+    </div><!-- end tab-pane -->
+
+  </div><!-- end tab-content -->
 </main>
