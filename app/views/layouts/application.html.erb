@@ -14,9 +14,15 @@
   </head>
 
   <body>
-    <% if current_user_commissioner? %>
-    <a href="/logout">Log out</a>
+    <% if logged_in? %>
+    <div id="welcome_container"
+    <a id="welcome"> Herzlich willkommen, Herr Kommissar!</a>
+    <%= link_to "Log out", logout_path, method: :delete %>
+    </div>
+    <% else %>
+    <h2 id="gtfo">This is still not a website. GTFO </h2>
     <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -1,15 +1,48 @@
-<section class="individual-item-container">
-  <h1>Here's your specific robot</h1>
+<nav>
+  <a class='home-link' href='/robots'>Home</a>
+</nav>
 
-  <h3><%= @robot.designation%></h3>
-  <h3>Model No:<%= @robot.model_no%> </h3>
-  </h3>
 
-  <div>
-    <p>Weight: <%= @robot.weight%> Tons</p>
+<div align='center'>
+  <% if @robot.pending %>
+    <h1>Pending Bot</h1>
+  <% else %>
+    <div class=robot_show_title>
+    <% if !@robot.designation.nil? %>
+      Your Robot
+      </div>
+      <div class='robot_show_designation'>
+      "<%= @robot.designation%>"
+    <% end %>
+      </div>
+  <div class='robot_show_model_no'>
+  Model No:<%= @robot.model_no%>
   </div>
+  <% end %>
 
-  <div>
-    <p>Height: <%= @robot.height%> Yds</p>
-  </div>
-</section>
+
+<div>
+  <p>Weight: <%= @robot.weight%> Tons</p>
+</div>
+
+<div>
+  <p>Height: <%= @robot.height%> Yds</p>
+</div>
+
+<% if @robot.pending == false %>
+
+  <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
+    <%= submit_tag("Re-designate")%>
+  <% end %>
+
+  <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
+    <%= submit_tag("Remove")%>
+  <% end %>
+
+<% else %>
+
+  <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
+    <%= submit_tag("Add to Inventory") %>
+  <% end %>
+
+<% end %>

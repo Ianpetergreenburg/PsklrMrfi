@@ -20,6 +20,16 @@ def gen_model_no
   model_no = (manu.sample + suffix)
 end
 
+def gen_model_no
+    manu = ['UR', 'MM', 'CS', 'BA', 'HM']
+    numbs = (0..9).to_a
+    suffix = ''
+      6.times do
+        suffix += numbs.sample.to_s
+      end
+    model_no = (manu.sample + suffix)
+end
+
 def gen_proto_model_no(manufacturer)
   abbreviations = ['UR', 'MM', 'CS', 'BA', 'HM']
   manufacturers = Manufacturer.names
@@ -45,3 +55,5 @@ Manufacturer.names.each { |name| Manufacturer.find_or_create_by(name: name) }
   prototype.model_no = gen_proto_model_no(prototype.manufacturer.name)
   prototype.save
 end
+
+

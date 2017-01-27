@@ -5,4 +5,13 @@
     <li>Height: <%= @prototype.height %></li>
     <li>Weight: <%= @prototype.weight %></li>
   </ul>
+
+  <% @robot = Robot.new(get_attributes_for_robot(@prototype)) %>
+  <%= form_for @robot, url: {action: "create", :controller=>"robots"} do |robot_form| %>
+    <%= robot_form.hidden_field :model_no %>
+    <%= robot_form.hidden_field :height %>
+    <%= robot_form.hidden_field :weight %>
+    <%= robot_form.hidden_field :pending %>
+    <%= robot_form.submit("Order") %>
+  <% end %>
 </div>

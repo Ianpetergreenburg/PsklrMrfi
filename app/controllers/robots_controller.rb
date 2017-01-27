@@ -12,6 +12,7 @@ class RobotsController < ApplicationController
 
   def create
     @robot = Robot.create(robot_params)
+    redirect_to robots_path
   end
 
   def show
@@ -21,7 +22,7 @@ class RobotsController < ApplicationController
   end
 
   def update
-    @robot.update(params[:designation])
+    @robot.update(robot_params)
     redirect_to robot_path(@robot)
   end
 
