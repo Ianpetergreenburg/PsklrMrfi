@@ -4,18 +4,16 @@
 </div>
 
 <main id="main-homepage">
-  <aside id="manufacturers-leftside-container">
-    <section class="manufacturer_viewer_left">
-      <h3>Manufacturers</h3>
-      <% @manufacturers.each do |manufacturer| %>
-        <ul>
-          <li>
-          <%= link_to manufacturer.name, manufacturer %>
-          </li>
-        </ul>
-      <% end %>
-    </section>
-  </aside>
+  <section class="manufacturer_viewer_left">
+    <h3>Manufacturers</h3>
+    <% @manufacturers.each do |manufacturer| %>
+      <ul>
+        <li>
+        <%= link_to manufacturer.name, manufacturer %>
+        </li>
+      </ul>
+    <% end %>
+  </section>
 
   <section class="robots_viewer_middle">
     <h3>Robots In Inventory</h3>

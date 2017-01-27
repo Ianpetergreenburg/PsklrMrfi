@@ -10,10 +10,19 @@ Manufacturer.create(name: "Cyberdyne Systems")
 Manufacturer.create(name: "Barry's Automotons")
 Manufacturer.create(name: "The Confederation of Ham Manufacturing Concern")
 
+def gen_model_no
+  manu = ['UR', 'MM', 'CS', 'BA', 'HM']
+  numbs = (0..9).to_a
+  suffix = ''
+    6.times do
+      suffix += numbs.sample.to_s
+    end
+  model_no = (manu.sample + suffix)
+end
 
 def gen_proto_model_no(manufacturer)
   abbreviations = ['UR', 'MM', 'CS', 'BA', 'HM']
-  manufacturers = ["US Robotics", "Mechanical Men Group", "Cyberdyne Systems", "Barry's Automotons", "The Confederate of Ham Manufacturing Concern"]
+  manufacturers = Manufacturer.names
   index = manufacturers.index(manufacturer)
   initials = abbreviations[index]
   numbs = (0..9).to_a
