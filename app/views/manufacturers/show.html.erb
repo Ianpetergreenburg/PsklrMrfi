@@ -6,6 +6,6 @@
   <h1><%= @manufacturer.name %></h1>
 
   <% @manufacturer.prototypes.each do |prototype| %>
-    <h2><%= link_to prototype.model_no, prototype, remote: true, id: "prototype-info-link-#{prototype.id}" %></h2>
+    <h2><%= link_to prototype.model_no, prototype, remote: true, class: 'prototype-link', id: "prototype-info-link-#{prototype.id}" %></h2>
   <% end %>
 </section>
