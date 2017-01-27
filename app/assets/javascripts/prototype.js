@@ -1,9 +1,10 @@
 $(document).ready(function() {
-  $(".prototype-link").click(function(event){
+  $('body').on("click", ".prototype-link", function(event){
     event.preventDefault()
     $('.prototype-details').remove()
     var id = $(this).prop('id').replace(/prototype-info-link-/, '')
     var $this = $(this).parent()
+    console.log($(this))
     $.ajax({
       url: '/prototypes/' + id,
       type: 'get',
