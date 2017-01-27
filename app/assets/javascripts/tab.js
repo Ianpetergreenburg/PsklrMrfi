@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('li').removeClass('active')
     $('div').removeClass('active')
     $(this).addClass('active')
-    var id = $(this).children('a').prop('href').replace(/http\:\/\/localhost\:3000\/robots/, '')
+    var id = $(this).children('a').attr('href')
     $('div' + id).addClass('active')
   })
 })
