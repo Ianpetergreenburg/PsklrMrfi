@@ -1,4 +1,18 @@
 
+.home_link {
+  text-align: center;
+  border: 2px solid #D7D4CF;
+  font-family: lato;
+  color: limegreen;
+  border-radius: 5px;
+  background-color: #808080;
+  max-width: 75%;
+  margin: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: .5em;
+}
+
 .individual-item-container {
   text-align: center;
   width: 45%;
