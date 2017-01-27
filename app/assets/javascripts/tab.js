@@ -4,7 +4,6 @@ $(document).ready(function() {
     $('div').removeClass('active')
     $(this).addClass('active')
     var id = $(this).children('a').attr('href')
-    console.log('id', id)
     $('div' + id).addClass('active')
   })
 })
