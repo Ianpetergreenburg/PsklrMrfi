@@ -8,14 +8,14 @@ $(document).ready(function() {
       url: '/robots/' + id,
       type: 'get',
     }).done(function(data){
-      $this.append(data)
+      $this.append($(data).filter('.robot-buy-details'))
     })
   })
 
   $('body').on("click", ".manufacturer-link", function(event){
     event.preventDefault()
     $('.manufacturer-details').remove()
-    var id = $(this).attr('href').replace(/manufacturers/, '')
+    var id = $(this).attr('href').replace(/\/manufacturers\//, '')
     var $this = $(this).parent()
     $.ajax({
       url: '/manufacturers/' + id,
