@@ -1,5 +1,6 @@
 class Manufacturer < ActiveRecord::Base
   has_many :prototypes
+  has_many :robots
 
 
   def self.names
