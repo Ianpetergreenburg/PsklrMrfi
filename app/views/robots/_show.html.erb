@@ -11,8 +11,9 @@
       Height: <%= @robot.height%> Yds
     </div>
 
+
     <div align='center'>
-      Price: <%= @robot.price %>
+      Price: <%= sprintf('%.2f', @robot.price) %>
     </div>
     
     <%= form_tag("/robots/#{@robot.id}", align: "center", method: "DELETE") do %>
