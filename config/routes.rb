@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get '/tina' => 'entrances#tina'
   get '/login_tina' => 'entrances#login_tina'
   get '/' => 'entrances#home'
+  get '/home2' => 'entrances#home2'
 end
