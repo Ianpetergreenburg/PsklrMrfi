@@ -1,4 +1,4 @@
-<section class="robot-buy-details">
+<section class="robot-buy-details robot-section">
   <div class="center-show-info">
     <div class='robot_show_model_no'>
       Model No: <%= @robot.model_no%>
@@ -15,10 +15,11 @@
     <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
       <%= submit_tag("Re-designate")%>
     <% end %>
+    -->
     <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
-      <%= submit_tag("Remove")%>
+      <%= submit_tag("Purchase Robot")%>
     <% end %>
-  <% else %>
+  <!--<% else %>
     <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
       <%= submit_tag("Add to Inventory") %>
     <% end %>
