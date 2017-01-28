@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in(user)
-      redirect_to  robots_path
+      redirect_to  robots_path #different path!
     else
       flash[:notice] = "You must be logged in with proper credentials"
       render 'new'
@@ -21,5 +21,8 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 
-
+  private
+  def session_params
+    params.require(:session).permit(:username, :password)
+  end
 end
