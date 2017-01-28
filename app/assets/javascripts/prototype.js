@@ -4,7 +4,6 @@ $(document).ready(function() {
     $('.prototype-details').remove()
     var id = $(this).prop('id').replace(/prototype-info-link-/, '')
     var $this = $(this).parent()
-    console.log($(this))
     $.ajax({
       url: '/prototypes/' + id,
       type: 'get',
