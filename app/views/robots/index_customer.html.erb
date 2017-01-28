@@ -27,7 +27,7 @@
         <ul>
           <% unless robot.pending %>
             <li>
-              <%= link_to robot.designation, robot %>
+              <%= link_to robot.designation, robot, remote: true, class: 'robot-buy-link'%>
             </li>
           <% end %>
         </ul>
