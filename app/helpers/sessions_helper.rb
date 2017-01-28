@@ -8,7 +8,7 @@ module SessionsHelper
     current_user
   end
 
-  def current_user_commissioner?
+  def current_user_commissioner
     current_user == User.find_by(username: "the_commish")
   end
 

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe ManufacturersController do
   let!(:manufacturer) { create(:manufacturer) }
-  describe 'GET #index' do
+  describe 'GET #show' do
     it 'responds with status code 200' do
       get :show, params: {id: manufacturer.id}
       expect(response).to have_http_status 200

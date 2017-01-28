@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :manufacturer do
-    name "The Confederation of Ham Manufacturing Concern"
+    name "Stamm Inc"
   end
 end
