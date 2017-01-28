@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       if current_user_commissioner
         redirect_to robots_path
       else
-        # redirect_to user home page
+         redirect_to index_customer_path
       end
     else
       flash[:notice] = "You must be logged in with proper credentials"
