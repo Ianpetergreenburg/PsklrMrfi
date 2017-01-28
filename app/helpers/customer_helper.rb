@@ -1,6 +1,6 @@
 module CustomerHelper
   def get_inventory
-    Robot.where(pending: false)
+    Robot.where(pending: false).sort_by{|robot| robot.designation }
   end
 
   def get_manufacturers
