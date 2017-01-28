@@ -25,6 +25,10 @@ class RobotsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html { render '_show', layout: false}
+      format.js
+    end
   end
 
   def edit
