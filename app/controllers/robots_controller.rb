@@ -3,9 +3,12 @@ class RobotsController < ApplicationController
 
   def index
     if logged_in?
-      @robots = Robot.all
-      @manufacturers = Manufacturer.all
-      render 'index_customer'
+      if current_user_commissioner
+        @robots = Robot.all
+        @manufacturers = Manufacturer.all
+      else
+        render 'index_customer'
+      end
     else
       redirect_to '/'
     end
@@ -26,7 +29,7 @@ class RobotsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html { render '_show', layout: false}
+      format.html { render '_show' }
       format.js
     end
   end
