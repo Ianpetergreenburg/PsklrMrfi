@@ -3,6 +3,7 @@
     <li>Manufactured by: <%= @manufacturer.name %></li>
     <li>Height: <%= @prototype.height %></li>
     <li>Weight: <%= @prototype.weight %></li>
+    <li>Price: <%= sprintf('%.2f', @prototype.price) %></li>
   </ul>
 
   <% @robot = Robot.new(get_attributes_for_robot(@prototype)) %>
