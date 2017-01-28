@@ -20,5 +20,10 @@ User.create(username: 'the_commish', password: 'mutantkiller')
       manufacturer: manufacturer
     })
   end
-
 end
+
+protos = Prototype.ids
+30.times {
+  proto = Prototype.find(protos.sample)
+
+}
