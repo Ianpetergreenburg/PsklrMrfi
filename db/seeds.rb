@@ -14,6 +14,7 @@ end
 
 Manufacturer.delete_all
 Prototype.delete_all
+Robot.delete_all
 
 User.create(username: 'the_commish', password: 'mutantkiller')
 

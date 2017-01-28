@@ -82,6 +82,19 @@ body, html {
   overflow: auto;
 }
 
+.robot-section {
+  width: 30%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border-collapse: collapse;
+  border: solid 2px black;
+  border-radius: 10px;
+  border-spacing: 10px;
+  background-color: white;
+  overflow: auto;
+}
+
+
 
 .top-title {
   width: 100%;
