@@ -7,11 +7,14 @@ class RobotsController < ApplicationController
         @robots = Robot.all
         @manufacturers = Manufacturer.all
       else
-        render 'index_customer'
+        redirect_to index_customer_path
       end
     else
       redirect_to '/'
     end
+  end
+
+  def index_customer
   end
 
   def new
