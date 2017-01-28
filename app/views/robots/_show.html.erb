@@ -11,6 +11,10 @@
       Height: <%= @robot.height%> Yds
     </div>
 
+    <div>
+      Price: $<%= @robot.price %>
+    </div>
+
     <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
       <%= submit_tag("Purchase Robot")%>
     <% end %>

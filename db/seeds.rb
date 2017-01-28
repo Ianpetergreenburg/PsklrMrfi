@@ -6,6 +6,7 @@ def get_attributes_for_robot(prototype)
   attributes['height'] = prototype.height
   attributes['weight'] = prototype.weight
   attributes['model_no'] = prototype.model_no
+  attributes['price'] = prototype.price
   attributes['manufacturer_id'] = prototype.manufacturer_id
   attributes['pending'] = [true, false].sample
   attributes
@@ -15,7 +16,7 @@ end
 Manufacturer.delete_all
 Prototype.delete_all
 Robot.delete_all
-
+User.delete_all
 
 
 
