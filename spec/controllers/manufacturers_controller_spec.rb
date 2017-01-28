@@ -13,9 +13,9 @@ describe ManufacturersController do
       expect(assigns(:manufacturer)).to eq(manufacturer)
     end
 
-    it 'renders the :index template' do
+    it 'renders the :show template' do
       get :show, params: {id: manufacturer.id}
-      expect(response).to render_template(:show)
+      expect(response).to render_template('_show')
     end
   end
 end

@@ -3,11 +3,11 @@ require 'rails_helper'
 describe SessionsController do
   describe 'sessions#create' do
     let :user do
-      FactoryGirl.create(:user)
+      create(:user)
     end
 
     let :credentials do
-      { session: {username: user.username, password: 'password'} }
+      { session: {username: user.username, password: 'hello'} }
     end
 
     before :each do

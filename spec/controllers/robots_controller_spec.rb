@@ -3,12 +3,13 @@ require 'rails_helper'
 describe RobotsController do
   let!(:robot) { create(:robot) }
 
-  describe 'GET #index when logged in' do
+  describe 'GET #index when average user is logged in' do
     before :each do
       create(:robot)
-      user = FactoryGirl.create(:user)
-      credentials = {session: {username: user.username, password: 'mutantkiller'}}
-      post :create, params: credentials
+      user = create(:user)
+      credentials = {session: {username: user.username, password: 'hello'}}
+      get :index
+      request.session[:user_id] = user.id
     end
 
     it 'responds with status code 200' do
@@ -16,14 +17,9 @@ describe RobotsController do
       expect(response).to have_http_status 200
     end
 
-    it 'assigns the robots as @robots' do
-      get :index
-      expect(assigns(:robots)).to eq(Robot.all)
-    end
-
     it 'renders the :index template' do
       get :index
-      expect(response).to render_template(:index)
+      expect(response).to render_template('index_customer')
     end
 
     it 'assigns @robots to the given robot' do
@@ -31,5 +27,25 @@ describe RobotsController do
       expect(assigns(:robot)).to eq robot
     end
   end
-end
 
+  describe 'GET #index when the commish is logged in' do
+    before :each do
+      create(:robot)
+      the_commish = create(:admin)
+      credentials = {session: {username: the_commish.username, password: "mutantkiller"}}
+      get :index
+      request.session[:user_id] = the_commish.id
+    end
+
+    it 'assigns the robots as @robots' do
+      get :index
+      expect(assigns(:robots)).to eq(Robot.all)
+    end
+
+    it 'assigns the manufacturers as @manufacturers' do
+      get :index
+      expect(assigns(:manufacturers)).to eq(Manufacturer.all)
+    end
+
+  end
+end
