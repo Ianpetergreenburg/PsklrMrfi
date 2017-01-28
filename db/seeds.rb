@@ -17,6 +17,7 @@ Prototype.delete_all
 Robot.delete_all
 
 User.create(username: 'the_commish', password: 'mutantkiller')
+User.create(username: 'not_the_commish', password: 'pw')
 
 @manufacturers = HTTParty.get("http://jordankamin.com/robots_api/robots.json")
 
