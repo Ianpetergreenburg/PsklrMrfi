@@ -110,3 +110,9 @@ ul {
 li {
   font-size: 16px;
 }
+
+@media (max-width: 600px) {
+  ul {
+    font-size: 18px;
+  }
+}
