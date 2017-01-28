@@ -11,17 +11,8 @@
       Height: <%= @robot.height%> Yds
     </div>
 
-<!--   <% if @robot.pending == false %>
-    <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
-      <%= submit_tag("Re-designate")%>
-    <% end %>
-    -->
     <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
       <%= submit_tag("Purchase Robot")%>
     <% end %>
-  <!--<% else %>
-    <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
-      <%= submit_tag("Add to Inventory") %>
-    <% end %>
-  <% end %> -->
+
   </section>
