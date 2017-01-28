@@ -1,0 +1,38 @@
+<% robots = get_inventory %>
+<% manufacturers = get_manufacturers %>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#tab1" data-toggle="tab">View By Manufacturers</a></li>
+  <li><a href="#tab2" data-toggle="tab">View All</a></li>
+</ul>
+
+<div class="tab-content">
+
+  <div class="tab-pane active" id="tab1">
+    <section class="robots-section">
+      <h3>Manufacturers</h3>
+      <% manufacturers.each do |manufacturer| %>
+        <ul>
+          <li>
+          <%= link_to manufacturer.name, manufacturer %>
+          </li>
+        </ul>
+      <% end %>
+    </section>
+  </div><!-- end tab-pane -->
+
+  <div class="tab-pane" id="tab2">
+    <section class="robots-section">
+      <h3>Robots In Inventory</h3>
+      <% robots.each do |robot| %>
+        <ul>
+          <% unless robot.pending %>
+            <li>
+              <%= link_to robot.designation, robot %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </section>
+  </div>
+</div>
+

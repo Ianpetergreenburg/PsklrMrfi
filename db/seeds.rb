@@ -5,6 +5,10 @@ require 'HTTParty'
 Manufacturer.delete_all
 Prototype.delete_all
 
+User.create(username: 'the_commish', password: 'mutantkiller')
+
+@manufacturers = HTTParty.get("http://jordankamin.com/robots_api/robots.json")
+
 @manufacturers.parsed_response["manufacturers"].each do |man|
   manufacturer = Manufacturer.create!( {name: man["name"]} )
   man["models"].each do |model|
