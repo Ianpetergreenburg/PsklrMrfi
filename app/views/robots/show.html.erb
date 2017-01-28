@@ -29,7 +29,7 @@
     </div>
 
     <div>
-      Price: $<%= @robot.price.to_s %>
+      Price: $<%= sprintf('%.2f', @robot.price) %>
     </div>
 
   <% if @robot.pending == false %>
