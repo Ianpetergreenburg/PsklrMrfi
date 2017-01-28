@@ -12,8 +12,8 @@
       <h3>Manufacturers</h3>
       <% manufacturers.each do |manufacturer| %>
         <ul>
-          <li>
-          <%= link_to manufacturer.name, manufacturer %>
+          <li class="manufacturer-store">
+          <%= link_to manufacturer.name, manufacturer, remote: true, class: 'manufacturer-link' %>
           </li>
         </ul>
       <% end %>

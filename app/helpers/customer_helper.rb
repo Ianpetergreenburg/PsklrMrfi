@@ -6,9 +6,8 @@ module CustomerHelper
   def get_manufacturers
     manufacturers = []
     get_inventory.each do |robot|
-      p robot
-      manufacturers << robot.manufacturer unless manufacturers.include? manufacturer
+      manufacturers << robot.manufacturer unless manufacturers.include? robot.manufacturer
     end
-    manufacturers
+    manufacturers.sort_by{ |manu| manu.name }
   end
 end

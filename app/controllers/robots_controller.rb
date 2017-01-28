@@ -5,6 +5,7 @@ class RobotsController < ApplicationController
     if logged_in?
       @robots = Robot.all
       @manufacturers = Manufacturer.all
+      render 'index_customer'
     else
       redirect_to '/'
     end

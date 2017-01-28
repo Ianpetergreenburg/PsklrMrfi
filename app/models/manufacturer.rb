@@ -7,6 +7,9 @@ class Manufacturer < ActiveRecord::Base
     manufacturers_names
   end
 
+  def inventory_robots
+    robots.where(pending: false)
+  end
 
 
   validates :name, presence: true#,
