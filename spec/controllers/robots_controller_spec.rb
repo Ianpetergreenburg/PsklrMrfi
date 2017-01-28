@@ -3,22 +3,21 @@ require 'rails_helper'
 describe RobotsController do
   let!(:robot) { create(:robot) }
 
-  describe 'GET #index when average user is logged in' do
+  describe 'GET #index_customer when average user is logged in' do
     before :each do
       create(:robot)
       user = create(:user)
       credentials = {session: {username: user.username, password: 'hello'}}
-      get :index
       request.session[:user_id] = user.id
     end
 
     it 'responds with status code 200' do
-      get :index
+      get :index_customer
       expect(response).to have_http_status 200
     end
 
-    it 'renders the :index template' do
-      get :index
+    it 'renders the :index_customer template' do
+      get :index_customer
       expect(response).to render_template('index_customer')
     end
 
