@@ -1,11 +1,20 @@
 class Manufacturer < ActiveRecord::Base
   has_many :prototypes
+  has_many :robots
+
 
   def self.names
     manufacturers_names
   end
 
-  validates :name, presence: true
+  def inventory_robots
+    robots.where(pending: false)
+  end
+
+
+  validates :name, presence: true#,
+    # inclusion: { in: name, message: "%{value} is not someone with whom we do business!" }
+
 
 private
 

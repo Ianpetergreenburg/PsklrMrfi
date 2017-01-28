@@ -5,6 +5,7 @@ class RobotsController < ApplicationController
     if logged_in?
       @robots = Robot.all
       @manufacturers = Manufacturer.all
+      render 'index_customer'
     else
       redirect_to '/'
     end
@@ -24,6 +25,10 @@ class RobotsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html { render '_show', layout: false}
+      format.js
+    end
   end
 
   def edit
@@ -47,7 +52,7 @@ class RobotsController < ApplicationController
   end
 
   def robot_params
-    params.require(:robot).permit(:designation, :height, :weight, :model_no, :pending)
+    params.require(:robot).permit(:designation, :height, :weight, :model_no, :pending, :manufacturer_id)
   end
 
 end

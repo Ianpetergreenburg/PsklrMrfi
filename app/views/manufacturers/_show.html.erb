@@ -1,0 +1,5 @@
+<section class="manufacturer-details">
+  <% @manufacturer.inventory_robots.each do |robot| %>
+    <h2><%= link_to robot.designation, robot, class: 'robot-link', id: "robot-info-link-#{robot.id}" %></h2>
+  <% end %>
+</section>
