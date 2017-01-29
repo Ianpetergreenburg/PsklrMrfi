@@ -23,7 +23,7 @@ describe RobotsController do
     end
 
 
-    it 'renders the :index template' do
+    it 'renders the :index_customer template' do
       get :index_customer
       expect(response).to render_template('index_customer')
     end
