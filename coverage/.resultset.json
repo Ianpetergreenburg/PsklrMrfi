@@ -34,15 +34,11 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/PsklrMrfi/app/helpers/robot_helper.rb": [
-        1,
-        null
-      ],
       "/Users/apprentice/Desktop/PsklrMrfi/app/helpers/sessions_helper.rb": [
         1,
         null,
         1,
-        21,
+        25,
         null,
         null,
         1,
@@ -50,27 +46,19 @@
         null,
         null,
         1,
-        8,
+        12,
         null,
         null,
         null,
         1,
-        1,
+        5,
         null,
         null,
         1,
-        1,
-        1,
+        2,
+        2,
         null,
         null,
-        null
-      ],
-      "/Users/apprentice/Desktop/PsklrMrfi/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/PsklrMrfi/app/helpers/users_controller_helper.rb": [
-        1,
         null
       ],
       "/Users/apprentice/Desktop/PsklrMrfi/app/models/user.rb": [
@@ -84,6 +72,34 @@
         null
       ],
       "/Users/apprentice/Desktop/PsklrMrfi/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/PsklrMrfi/app/controllers/entrances_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/PsklrMrfi/app/controllers/application_controller.rb": [
+        1,
         1,
         1,
         null
@@ -109,12 +125,6 @@
         null,
         null,
         null,
-        null
-      ],
-      "/Users/apprentice/Desktop/PsklrMrfi/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
         null
       ],
       "/Users/apprentice/Desktop/PsklrMrfi/app/controllers/prototypes_controller.rb": [
@@ -200,41 +210,41 @@
         1,
         null,
         1,
-        0,
-        0,
+        3,
+        3,
+        null,
+        null,
+        1,
+        7,
+        7,
+        5,
+        5,
+        1,
+        null,
+        4,
+        null,
+        null,
+        2,
+        2,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
         null,
         null,
         1,
         1,
-        1,
-        1,
-        1,
-        0,
-        null,
-        1,
-        null,
-        null,
-        0,
-        0,
-        null,
+        7,
         null,
         null,
         1,
-        1,
-        1,
+        7,
         null,
         null,
         1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
+        14,
         null,
         null
       ],
@@ -332,28 +342,6 @@
         0,
         0
       ],
-      "/Users/apprentice/Desktop/PsklrMrfi/app/controllers/entrances_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/apprentice/Desktop/PsklrMrfi/app/jobs/application_job.rb": [
         0,
         0
@@ -377,6 +365,6 @@
         0
       ]
     },
-    "timestamp": 1485651967
+    "timestamp": 1485656883
   }
 }
