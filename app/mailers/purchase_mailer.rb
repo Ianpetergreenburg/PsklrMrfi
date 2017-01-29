@@ -1,5 +1,5 @@
 class PurchaseMailer < ActionMailer::Base
-  default from: 'angroover@gmail.com'
+  default from: 'pugetsoundkarateleague@gmail.com'
   layout 'purchase_mailer'
 
   def purchase_email(user, purchase)
