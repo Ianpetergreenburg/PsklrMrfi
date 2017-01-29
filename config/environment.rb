@@ -11,6 +11,6 @@ ActionMailer::Base.smtp_settings =
     :domain             => 'heroku.com',
     :authentication     => :plain,
     :user_name          => 'pugetsoundkarateleague@gmail.com',
-    :password           => 'mutantk1ll3r'
+    :password           => 'mutantk1ll3r',
     :enable_startstls_auto => true
   }
