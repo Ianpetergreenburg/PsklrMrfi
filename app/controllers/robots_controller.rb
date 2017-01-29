@@ -48,7 +48,7 @@ class RobotsController < ApplicationController
   def destroy
     if current_user
       flash[:success] = "Check your email for your purchase confirmation"
-      PurchaseMailer.purchase_email(current_user).deliver_now
+      PurchaseMailer.purchase_email(current_user, @robot).deliver
     end
     @robot.destroy
     redirect_to robots_path
