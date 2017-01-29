@@ -1,18 +1,30 @@
 <section class="robot-buy-details robot-section">
   <div class="center-show-info">
-    <div class='robot_show_model_no'>
-      Model No: <%= @robot.model_no%>
+    <div align= 'center' class='robot_show_model_no'>
+      Designation: <%= @robot.designation %>
     </div>
-    <div>
+    <div align='center'>
       Weight: <%= @robot.weight%> Tons
     </div>
 
-    <div>
+    <div align='center'>
       Height: <%= @robot.height%> Yds
     </div>
 
-    <%= form_tag("/robots/#{@robot.id}", method: "DELETE") do %>
-      <%= submit_tag("Purchase Robot")%>
+    <div align='center'>
+      Price: $<%= sprintf('%.2f', @robot.price) %>
+    </div>
+
+    <%= form_tag("/robots/#{@robot.id}", align: "center", method: "DELETE") do %>
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_mpRcVQZIKraOHtQYKZFtv1db"
+        data-amount='<%= @robot.price * 100 %>'
+        data-name="Robot Purchase"
+        data-description="<%= @robot.designation %>"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
     <% end %>
 
   </section>

@@ -4,6 +4,7 @@ module PrototypeHelper
     attributes['height'] = prototype.height
     attributes['weight'] = prototype.weight
     attributes['model_no'] = prototype.model_no
+    attributes['price'] = (prototype.price * 2)
     attributes['manufacturer_id'] = prototype.manufacturer_id
     attributes['pending'] = true
     attributes

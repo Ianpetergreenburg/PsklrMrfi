@@ -28,6 +28,10 @@
       Height: <%= @robot.height%> Yds
     </div>
 
+    <div>
+      Price: $<%= sprintf('%.2f', @robot.price) %>
+    </div>
+
   <% if @robot.pending == false %>
     <%= form_tag("/robots/#{@robot.id}/edit", method: "GET") do %>
       <%= submit_tag("Re-designate")%>
