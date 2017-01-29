@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :current_user_commissioner
+  before_action :current_user_commissioner
 
   def new
     @user = User.new
@@ -14,11 +14,9 @@ class UsersController < ApplicationController
       redirect_to robots_path # page for shopping
     else
       flash[:error] = "You must give the correct information to continue!"
-      redirect_to 'new'
+      render "new"
     end
   end
-
-  #option to edit info or delete
 
   private
     def user_params
