@@ -16,5 +16,10 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+
+#ignore coverage files
+/coverage/*
+
 # Ignore application configuration
 /config/application.yml
+

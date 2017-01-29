@@ -17,14 +17,6 @@ class RobotsController < ApplicationController
   def index_customer
   end
 
-  def new
-    if logged_in?
-      @robot = Robot.new
-    else
-      redirect_to '/'
-    end
-  end
-
   def create
     @robot = Robot.create(robot_params)
     redirect_to robots_path

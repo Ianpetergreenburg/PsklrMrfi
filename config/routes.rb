@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  resources :robots
+  resources :robots, except: [:new]
   get '/index_customer' => 'robots#index_customer'
   resources :prototypes, only: [:show]
   resources :users

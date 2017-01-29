@@ -28,11 +28,11 @@ class SessionsController < ApplicationController
 
   private
   def params_username
-    params[:session][:username]
+    session_params[:username]
   end
 
   def params_password
-    params[:session][:password]
+    session_params[:password]
   end
 
   def session_params
