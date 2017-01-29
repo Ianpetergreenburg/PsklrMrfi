@@ -23,9 +23,14 @@ class RobotsController < ApplicationController
   end
 
   def show
-    respond_to do |format|
-      format.html { render '_show' }
-      format.js
+    if current_user_commissioner
+    elsif current_user
+      respond_to do |format|
+        format.html { render '_show' }
+        format.js
+      end
+    else
+      redirect_to '/'
     end
   end
 
@@ -39,11 +44,15 @@ class RobotsController < ApplicationController
 
   def destroy
     if current_user
-      flash[:success] = "Check your email for your purchase confirmation"
-      PurchaseMailer.purchase_email(current_user, @robot).deliver
+      if !current_user_commissioner
+        flash[:success] = "Check your email for your purchase confirmation"
+        PurchaseMailer.purchase_email(current_user, @robot).deliver
+      end
+      @robot.destroy
+      redirect_to robots_path
+    else
+      redirect_to '/'
     end
-    @robot.destroy
-    redirect_to robots_path
   end
 
 

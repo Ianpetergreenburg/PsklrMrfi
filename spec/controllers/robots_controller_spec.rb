@@ -72,21 +72,65 @@ describe RobotsController do
   end
 
   context 'GET #show' do
-    it 'assigns @robot to a robot' do
-      get :show, params: {id: robot.id}
-      expect(assigns(:robot)).to eq robot
+    context "when the user is logged in" do
+      before :each do
+        user = create(:user)
+        request.session[:user_id] = user.id
+      end
+
+      it 'assigns @robot to a robot' do
+        get :show, params: {id: robot.id}
+        expect(assigns(:robot)).to eq robot
+      end
+
+      it 'responds with status code 200' do
+        get :show, params: {id: robot.id}
+        expect(response).to have_http_status 200
+      end
+
+      it 'renders the :_show template' do
+        get :show, params: {id: robot.id}
+        expect(response).to render_template('_show')
+      end
     end
 
-    it 'responds with status code 200' do
-      get :show, params: {id: robot.id}
-      expect(response).to have_http_status 200
+    context "when the commish is logged in" do
+      before :each do
+        user = create(:admin)
+        request.session[:user_id] = user.id
+      end
+
+      it 'assigns @robot to a robot' do
+        get :show, params: {id: robot.id}
+        expect(assigns(:robot)).to eq robot
+      end
+
+      it 'responds with status code 200' do
+        get :show, params: {id: robot.id}
+        expect(response).to have_http_status 200
+      end
+
+      it 'renders the :_show template' do
+        get :show, params: {id: robot.id}
+        expect(response).to render_template('show')
+      end
     end
 
-    it 'renders the :_show template' do
-      get :show, params: {id: robot.id}
-      expect(response).to render_template('_show')
-    end
+    context "when the user isn\'t logged in" do
+      before :each do
+        create(:admin)
+        session[:user_id] = nil
+      end
+      it 'responds with status code 302' do
+        get :show, params: {id: robot.id}
+        expect(response).to have_http_status 302
+      end
 
+      it 'redirects to the home page' do
+        get :show, params: {id: robot.id}
+        expect(response).to redirect_to '/'
+      end
+    end
   end
 
   context 'GET #edit' do
@@ -107,6 +151,10 @@ describe RobotsController do
   end
 
   context 'DELETE #destroy' do
+    before :each do
+      user = create(:user)
+      request.session[:user_id] = user.id
+    end
     it 'assigns @robot to a robot' do
       delete :destroy, params: {id: robot.id}
       expect(assigns(:robot)).to eq robot
