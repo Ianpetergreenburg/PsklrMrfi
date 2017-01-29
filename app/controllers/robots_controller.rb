@@ -17,23 +17,20 @@ class RobotsController < ApplicationController
   def index_customer
   end
 
-  def new
-    if logged_in?
-      @robot = Robot.new
-    else
-      redirect_to '/'
-    end
-  end
-
   def create
     @robot = Robot.create(robot_params)
     redirect_to robots_path
   end
 
   def show
-    respond_to do |format|
-      format.html { render '_show' }
-      format.js
+    if current_user_commissioner
+    elsif current_user
+      respond_to do |format|
+        format.html { render '_show' }
+        format.js
+      end
+    else
+      redirect_to '/'
     end
   end
 
@@ -46,8 +43,16 @@ class RobotsController < ApplicationController
   end
 
   def destroy
-    @robot.destroy
-    redirect_to robots_path
+    if current_user
+      if !current_user_commissioner
+        flash[:success] = "Check your email for your purchase confirmation"
+        PurchaseMailer.purchase_email(current_user, @robot).deliver
+      end
+      @robot.destroy
+      redirect_to robots_path
+    else
+      redirect_to '/'
+    end
   end
 
 

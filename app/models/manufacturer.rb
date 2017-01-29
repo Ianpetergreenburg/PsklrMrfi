@@ -12,13 +12,11 @@ class Manufacturer < ActiveRecord::Base
   end
 
 
-  validates :name, presence: true#,
-    # inclusion: { in: name, message: "%{value} is not someone with whom we do business!" }
-
+  validates :name, presence: true
 
 private
 
-  def manufacturers_names
+  def self.manufacturers_names
     manufacturers = HTTParty.get("http://jordankamin.com/robots_api/robots.json")
     name_array = []
     manufacturers.parsed_response["manufacturers"].each do |man|
@@ -26,6 +24,5 @@ private
     end
     name_array
   end
-
 
 end

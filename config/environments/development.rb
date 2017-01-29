@@ -26,8 +26,19 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings =
+  {
+
+    :address            => 'smtp.gmail.com',
+    :port               => 25,
+    :domain             => 'gmail.com', #you can also use google.com
+    :authentication     => :plain,
+    :user_name          => 'pugetsoundkarateleague@gmail.com',
+    :password           => 'mutantk1ll3r'
+  }
 
   config.action_mailer.perform_caching = false
 
