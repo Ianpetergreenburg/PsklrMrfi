@@ -333,20 +333,8 @@
         1,
         null,
         null
-      ],
-      "/Users/apprentice/Desktop/PsklrMrfi/app/channels/application_cable/channel.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/apprentice/Desktop/PsklrMrfi/app/channels/application_cable/connection.rb": [
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1485670537
+    "timestamp": 1485671101
   }
 }
