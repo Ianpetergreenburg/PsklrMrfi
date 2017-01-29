@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   resources :robots, except: [:new]
   get '/index_customer' => 'robots#index_customer'
   resources :prototypes, only: [:show]
-  resources :users
+  resources :users, except: [:index]
   resources :manufacturers, only: [:show]
   get '/tina' => 'entrances#tina'
   get '/login_tina' => 'entrances#login_tina'

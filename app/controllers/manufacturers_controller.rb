@@ -15,6 +15,8 @@ class ManufacturersController < ApplicationController
           format.js
         end
       end
+    else
+      redirect_to '/'
     end
   end
 
