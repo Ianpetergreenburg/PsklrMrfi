@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You are now a member!"
       log_in(@user)
-      render '' # page for shopping
+      redirect_to robots_path # page for shopping
     else
       flash[:error] = "You must give the correct information to continue!"
       redirect_to 'new'

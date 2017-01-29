@@ -5,8 +5,11 @@
   <% end %>
 
   <form action="/users" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="text" name="user[email]" placeholder="Email:">
     <input type="text" name="user[username]" placeholder="Username:">
+    <input type="text" name="user[first_name]" placeholder="first_name:">
+    <input type="text" name="user[last_name]" placeholder="last_name:">
     <input type="password" name="user[password]" placeholder="Password:">
     <input type="password" name="password_confirmation" placeholder="Password Confirmation:">
     <input type="submit" value="Sign Up!">
