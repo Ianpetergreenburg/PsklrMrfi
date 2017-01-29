@@ -107,6 +107,10 @@ describe RobotsController do
   end
 
   context 'DELETE #destroy' do
+    before :each do
+      user = create(:user)
+      request.session[:user_id] = user.id
+    end
     it 'assigns @robot to a robot' do
       delete :destroy, params: {id: robot.id}
       expect(assigns(:robot)).to eq robot
