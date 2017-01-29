@@ -1,4 +1,8 @@
-
+label {
+  color: rgba(246, 248, 220,1);
+  // color: rgba(40,96,144,1);
+  letter-spacing: 2px;
+}
 
 input {
   display: block;
@@ -11,7 +15,7 @@ input {
 .form_header {
   text-align: center;
   padding-bottom: 1em;
-  color: rgba(40,96,144,1);
+  color: rgba(246, 248, 220,1);
 }
 
 .form_btn {
@@ -29,7 +33,7 @@ input {
   padding-top: 2em;
   text-align: center;
   background: -webkit-linear-gradient(top, rgba(40,96,144,.2), rgba(255,0,0,1)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom, rgba(40,96,144,.2), rgba(255,0,0,1)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom, rgba(40,96,144,.2), rgba(255,0,0,1)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom, rgba(40,96,144,.2), rgba(255,0,0,0)); /* Standard syntax (must be last) */
+    background: -o-linear-gradient(bottom, rgba(246, 248, 220,.2), rgba(255,0,0,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgba(246, 248, 220,.2), rgba(255,0,0,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgba(246, 248, 220,0), rgba(246, 248, 220,.5)); /* Standard syntax (must be last) */
 }
