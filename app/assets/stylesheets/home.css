@@ -15,6 +15,7 @@
   text-align: center;
   border: solid 1px black;
   padding-bottom: 20px;
+  text-shadow: -1px -1px 0 rgba(0,0,0,.2);
 }
 
 .tina-container {
@@ -22,12 +23,15 @@
   text-align: center;
   border: solid 1px black;
   padding: 20px;
+  font-weight: 400;
+  text-shadow: -1px -1px 0 rgba(0,0,0,.2);
 }
 
 .stealthy-login {
   position: absolute;
   bottom: 0;
   right: 0;
+  text-shadow: -1px -1px 0 rgba(0,0,0,.2);
 }
 
 .nav nav-tabs{
