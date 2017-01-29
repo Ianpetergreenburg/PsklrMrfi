@@ -172,7 +172,6 @@ describe RobotsController do
     end
 
     it 'creates the robot in the system' do
-      p attributes_for(:robot)
       expect{post :create, params: {robot: @attributes}}.to change{Robot.count}.from(1).to(2)
     end
   end
