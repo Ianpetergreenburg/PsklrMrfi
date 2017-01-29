@@ -16,9 +16,9 @@
   </head>
 
   <body>
-    <% if current_user_commissioner %>
+    <% if current_user_commissioner || current_user %>
       <div id="welcome_container">
-        <a id="welcome"> Welcome, Commissioner! </a>
+        <a id="welcome"> Welcome! </a>
         <%= link_to "Log out", logout_path, method: :delete %>
       </div>
     <% elsif logged_in? %>
