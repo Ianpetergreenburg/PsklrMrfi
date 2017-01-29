@@ -8,15 +8,15 @@
       "/Users/apprentice/Desktop/PsklrMrfi/app/helpers/customer_helper.rb": [
         1,
         1,
-        0,
+        6,
         null,
         null,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        2,
         null,
-        0,
+        2,
         null,
         null
       ],
@@ -352,6 +352,6 @@
         0
       ]
     },
-    "timestamp": 1485667409
+    "timestamp": 1485667735
   }
 }
