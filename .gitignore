@@ -16,5 +16,5 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore this file because it has my email info
-/config/email.yml
+# Ignore application configuration
+/config/application.yml
