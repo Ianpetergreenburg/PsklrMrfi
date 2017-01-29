@@ -21,6 +21,11 @@
         <a id="welcome"> Welcome, Commissioner! </a>
         <%= link_to "Log out", logout_path, method: :delete %>
       </div>
+    <% elsif logged_in? %>
+      <div id="welcome_container">
+        <a id="welcome"> Welcome, <%= current_user.username %> </a>
+        <%= link_to "Log out", logout_path, method: :delete %>
+      </div>
     <% else %>
       <h2 id="gtfo"> This is still not a website.</h2>
     <% end %>
