@@ -4,6 +4,7 @@ FactoryGirl.define do
     weight 3
     model_no 'BR_CougarFalcon'
     designation 'Brobot'
-    manufacturer 
+    price 50.00
+    manufacturer
   end
 end

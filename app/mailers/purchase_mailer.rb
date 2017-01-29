@@ -1,10 +1,11 @@
 class PurchaseMailer < ActionMailer::Base
-  default to : 'angroover@gmail.com'
-  def purchase_email(name, email, body)
-    @name = name
-    @email = email
-    @body = body
+  default from: 'angroover@gmail.com'
+  layout 'purchase_mailer'
 
-    mail(to:email, subject: "Congratulations on your new purchase!")
+  def purchase_email(user, purchase)
+    @user = user
+    @robot = purchase
+
+    mail(to: @user.email, subject: "Congratulations on your new purchase!")
   end
 end

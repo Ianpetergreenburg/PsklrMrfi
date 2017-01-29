@@ -6,6 +6,7 @@ def get_attributes_for_robot(prototype)
   attributes['height'] = prototype.height
   attributes['weight'] = prototype.weight
   attributes['model_no'] = prototype.model_no
+  attributes['price'] = (prototype.price * 2)
   attributes['manufacturer_id'] = prototype.manufacturer_id
   attributes['pending'] = [true, false].sample
   attributes
@@ -15,12 +16,12 @@ end
 Manufacturer.delete_all
 Prototype.delete_all
 Robot.delete_all
-
+User.delete_all
 
 
 
 User.create(first_name: "George William", last_name: "Rutherford IV", email: "portal_catcher@bsalt.future", username: 'the_commish', password: 'mutantkiller')
-User.create(first_name: "Not", last_name: "The Commish", email: "not_the_commish@present.norm", username: 'not_the_commish', password: 'pw')
+User.create(first_name: "Allyse", last_name: "Groover", email: "groovestation31785@yahoo.com", username: 'not_the_commish', password: 'pw')
 
 @manufacturers = HTTParty.get("http://jordankamin.com/robots_api/robots.json")
 

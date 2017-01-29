@@ -6,10 +6,15 @@ class ManufacturersController < ApplicationController
 
 
   def show
-    @manufacturer = Manufacturer.find(params[:id])
-    respond_to do |format|
-      format.html { render '_show', layout: false}
-      format.js
+    if logged_in?
+      @manufacturer = Manufacturer.find(params[:id])
+      if current_user_commissioner
+      else
+        respond_to do |format|
+          format.html { render '_show', layout: false}
+          format.js
+        end
+      end
     end
   end
 

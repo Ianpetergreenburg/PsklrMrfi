@@ -3,6 +3,7 @@
     <li>Manufactured by: <%= @manufacturer.name %></li>
     <li>Height: <%= @prototype.height %></li>
     <li>Weight: <%= @prototype.weight %></li>
+    <li>Price: $<%= sprintf('%.2f', @prototype.price) %></li>
   </ul>
 
   <% @robot = Robot.new(get_attributes_for_robot(@prototype)) %>
@@ -12,6 +13,7 @@
     <%= robot_form.hidden_field :weight %>
     <%= robot_form.hidden_field :pending %>
     <%= robot_form.hidden_field :manufacturer_id %>
+    <%= robot_form.hidden_field :price %>
     <%= robot_form.submit("Order") %>
   <% end %>
 </div>
