@@ -56,7 +56,6 @@ describe RobotsController do
         get :index
         expect(response).to render_template('index')
       end
-
     end
 
     describe 'GET #index when not logged in' do
