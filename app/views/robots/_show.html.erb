@@ -1,4 +1,6 @@
 <section class="robot-buy-details robot-section">
+
+
   <div class="center-show-info">
     <div align= 'center' class='robot_show_model_no'>
       Designation: <%= @robot.designation %>
@@ -13,14 +15,14 @@
 
 
     <div align='center'>
-      Price: <%= sprintf('%.2f', @robot.price) %>
+      Price: $<%= sprintf('%.2f', @robot.price) %>
     </div>
     
     <%= form_tag("/robots/#{@robot.id}", align: "center", method: "DELETE") do %>
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_mpRcVQZIKraOHtQYKZFtv1db"
-        data-amount='<%= @robot.price %>'
+        data-amount='<%= @robot.price*100 %>'
         data-name="Robot Purchase"
         data-description="<%= @robot.designation %>"
         data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
