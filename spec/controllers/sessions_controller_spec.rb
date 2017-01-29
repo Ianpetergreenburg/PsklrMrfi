@@ -2,12 +2,12 @@ require 'rails_helper'
 
 describe SessionsController do
 
-    let! (:user) { create(:user) }
-    let (:credentials) { { session: {username: user.username, password: 'hello'} } }
-    let (:bad_credentials) { { session: {username: user.username, password: 'not_hello'} } }
+  let! (:user) { create(:user) }
+  let (:credentials) { { session: {username: user.username, password: attributes_for(:user)[:password] } } }
+  let (:bad_credentials) { { session: {username: user.username, password: 'not_hello'} } }
 
-    let! (:admin) { create(:admin) }
-    let (:admin_credentials) { { session: {username: admin.username, password: 'mutantkiller'} } }
+  let! (:admin) { create(:admin) }
+  let (:admin_credentials) { { session: {username: admin.username, password: attributes_for(:admin)[:password] } } }
 
   describe 'sessions#create' do
 
