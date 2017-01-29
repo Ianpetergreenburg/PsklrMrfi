@@ -1,15 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { create(:user)}
-  let(:invalid_user) { User.new() }
 
   describe 'validations' do
-    it 'is valid if username and password_digest exist' do
-      expect(user).to be_valid
-    end
-    it 'is invalid if username or password does not exist' do
-      expect(invalid_user).to_not be_valid
-    end
+    it { is_expected.to validate_presence_of :first_name }
+    it { is_expected.to validate_presence_of :last_name }
+    it { is_expected.to validate_presence_of :username }
+    it { is_expected.to validate_presence_of :email }
+    it { is_expected.to validate_uniqueness_of :username }
+    it { is_expected.to validate_uniqueness_of :email }
+    it { is_expected.to have_secure_password }
   end
 end

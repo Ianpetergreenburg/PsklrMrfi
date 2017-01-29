@@ -5,6 +5,7 @@ FactoryGirl.define do
     email "portal_catcher@bsalt.future"
     username "the_commish"
     password "mutantkiller"
+    admin true
   end
 end
 
