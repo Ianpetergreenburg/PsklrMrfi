@@ -9,11 +9,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:notice] = "You are now a member!"
       log_in(@user)
+      flash[:success] = "You are now a member!"
       redirect_to robots_path # page for shopping
     else
-      flash[:error] = "You must give the correct information to continue!"
+      flash[:danger] = "You must give the correct information to continue!"
       render "new"
     end
   end
