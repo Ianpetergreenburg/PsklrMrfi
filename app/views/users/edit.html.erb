@@ -1,0 +1,25 @@
+<% provide(:title, "Edit user") %>
+<div class='registration_form'>
+  <h1 class="form_header">Update your profile</h1>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@user) do |f| %>
+
+        <%= f.label :usernname %>
+        <%= f.text_field :username %>
+
+        <%= f.label :email, "Update Email Address" %>
+        <%= f.email_field :email %>
+
+        <%= f.label :password, "New Password" %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "New Password Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

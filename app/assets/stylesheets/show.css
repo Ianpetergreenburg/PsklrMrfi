@@ -1,3 +1,15 @@
+#welcome_container {
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+#welcome {
+ display: inline-flex
+}
+
+#log-out {
+  display: inline-flex;
+}
 
 .home_link {
   text-align: center;
