@@ -59,4 +59,43 @@ describe UsersController, type: :controller do
       expect(response).to render_template('new')
     end
   end
+
+  describe "users#edit" do
+    let(:user) { create(:user) }
+    xcontext 'user is logged in' do
+
+
+      before :each do
+        request.session[:user_id] = user.id
+      end
+
+      it 'responds with status code 200' do
+        get :edit, params: { id: user.id }
+        expect(response).to have_http_status 200
+      end
+
+      it 'assigns the user as @user' do
+        get :edit, params: { id: user.id }
+        expect(assigns(:user)).to eq user
+      end
+
+      it 'renders the :edit template' do
+        get :edit, params: { id: user.id }
+        expect(response).to render_template('edit')
+      end
+    end
+
+    context 'user isn\'t logged in' do
+
+      it 'responds with status code 302' do
+        get :edit, params: { id: user.id }
+        expect(response).to have_http_status 302
+      end
+
+      it 'redirects to home page' do
+        get :edit, params: { id: user.id }
+        expect(response).to redirect_to '/'
+      end
+    end
+  end
 end
