@@ -1,27 +1,32 @@
 require 'rails_helper'
 
-feature 'visiting the tina page' do
-  scenario 'nothing is there except tina warning' do
-    visit '/tina'
-    expect(page).to have_content('THIS IS NOT A')
-  end
-end
+feature 'visiting the registration page' do
+  let!(:user) { build(:user) }
 
-feature 'visiting the tina login page' do
-  scenario 'there is a tina warning' do
-    visit '/login_tina'
-    expect(page).to have_content('THIS IS NOT A')
-  end
-
-  scenario 'click register to go to new user form' do
-    visit '/login_tina'
-    click_link 'register'
+  scenario 'there is a registration form' do
+    visit '/users/new'
     expect(page).to have_css('div.registration_form')
   end
 
-  scenario 'click login to go to login form' do
-    visit '/login_tina'
-    click_link 'login'
-    expect(page).to have_css('div.login_form')
+  scenario 'filling out form with legit info logs you in' do
+    visit '/users/new'
+
+    fill_in 'user_username', :with => user.username
+    fill_in 'user_first_name', :with => user.first_name
+    fill_in 'user_last_name', :with => user.last_name
+    fill_in 'user_email', :with => user.email
+
+    fill_in 'user_password', :with => attributes_for(:user)[:password]
+    fill_in 'user_password_confirmation', :with => attributes_for(:user)[:password]
+
+    find('input[name="commit"]').click
+    expect(page).to have_css('div#welcome_container')
+  end
+
+  scenario 'filling out form with nonlegit info doesn\'t log you in' do
+    visit '/users/new'
+
+    find('input[name="commit"]').click
+    expect(page).to_not have_css('div#welcome_container')
   end
 end
