@@ -22,12 +22,6 @@
         <%= link_to "Log out", logout_path, method: :delete, id: "log-out" %> |
         <%= link_to "Update Profile", edit_user_path(current_user) %>
       </div>
-    <% elsif logged_in? %>
-      <div id="welcome_container">
-        <a id="welcome"> Welcome, <%= params[:username] %> </a>
-        <%= link_to "Log out", logout_path, method: :delete %>
-       <a href="users/<%=params[:id]%>/edit">Update Profile</a>
-      </div>
     <% else %>
       <h2 id="gtfo"> This is still not a website.</h2>
     <% end %>
