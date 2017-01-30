@@ -211,9 +211,9 @@ describe RobotsController do
         expect{delete :destroy, params: {id: robot.id}}.to change{Robot.count}.from(1).to(0)
       end
 
-      it 'sets the flash success notice' do
+      it 'sets the flash info notice' do
         delete :destroy, params: {id: robot.id}
-        expect(request.flash[:success]).to_not be_nil
+        expect(request.flash[:info]).to_not be_nil
       end
     end
 
