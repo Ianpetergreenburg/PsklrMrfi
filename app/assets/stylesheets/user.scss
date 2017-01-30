@@ -60,3 +60,56 @@ input {
     background: -moz-linear-gradient(bottom, rgba(246, 248, 220,.2), rgba(255,0,0,1)); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom, rgba(246, 248, 220,0), rgba(246, 248, 220,.5)); /* Standard syntax (must be last) */
 }
+
+
+@media screen and (max-width: 500px) and (min-width: 10px) {
+  h1 {
+    font-size: 35pt;
+    margin: 3px;
+    font-size: 3vh;
+  }
+
+  headers {
+    font-size: 3vh;
+  }
+
+  .registration_form{
+    min-width: 80%;
+    font-size: 2.5vh;
+  }
+
+  .btn {
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-grid;
+    font-size: 18pt;
+
+  }
+
+}
+
+@media screen and (max-width: 300px) and (min-width: 10px) {
+
+  .registration_form {
+    border: none;
+  }
+
+  label {
+    font-size: .8vh;
+  }
+
+  input {
+    font-size: .8vh;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+
+  .btn {
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-grid;
+    font-size: 10pt;
+  }
+
+}
+
