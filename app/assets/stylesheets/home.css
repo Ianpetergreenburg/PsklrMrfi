@@ -10,12 +10,62 @@
   border-left: 1px solid #CCCCCC;
 }
 
+h3 {
+  text-align: center;
+  font-family: lato;
+}
+
+.manufacturer-store {
+  font-size: 2.5vh;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+.manufacturer-link {
+  color: grey;
+  font-family: lato;
+  /*border: 2px solid grey;*/
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 2vh;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  font-size: 2vh;
+  margin: 4px;
+  background: -webkit-linear-gradient(top, rgba(40,96,144,.2), rgba(255,0,0,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgba(246, 248, 220,.2), rgba(255,0,0,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgba(246, 248, 220,.2), rgba(255,0,0,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgba(169, 169, 169,0), rgba(169, 169, 169,.8)); /* Standard syntax (must be last) */
+}
+
 .home-container {
-  margin: 20% 40%;
+  margin: auto;
+  margin-top: 20%;
   text-align: center;
   border: solid 1px black;
   padding-bottom: 20px;
+  min-width: 350px;
+  max-width: 80%;
+  padding-left: 3px;
+  padding-right: 3px;
+  display: block;
+}
+
+.button {
+  margin: auto;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 1em;
+  font-family: verdana;
+  text-align: center;
+  display: block;
+  margin-top: 5%;
+  font-size: 13pt;
+  margin-left: 5%;
+  margin-right: 5%;
   text-shadow: -1px -1px 0 rgba(0,0,0,.2);
+
 }
 
 .tina-container {
@@ -25,12 +75,23 @@
   padding: 20px;
   font-weight: 400;
   text-shadow: -1px -1px 0 rgba(0,0,0,.2);
+
 }
 
 .stealthy-login {
   position: absolute;
   bottom: 0;
   right: 0;
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  font-size: 8pt;
   text-shadow: -1px -1px 0 rgba(0,0,0,.2);
 }
 
@@ -45,4 +106,94 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  font-size: 8pt;
+
+}
+
+@media only screen and (max-width: 699px) and (min-width: 10px) {
+  h1 {
+    font-size: 35pt;
+    font-family: verdana;
+    margin: 3px;
+  }
+
+  #link1, #link2, #link3 {
+    font-size: 3vh;
+  }
+
+  .robot-buy-link {
+    font-size: 3vh;
+  }
+
+
+  .home-container {
+    font-family: verdana;
+    min-width: 80%;
+  }
+
+  .manufacturer-link {
+    font-size: 3.5vh;
+    display: block;
+  }
+
+  .manufacturer-store {
+
+  }
+
+  .button {
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-grid;
+    font-size: 18pt;
+
+  }
+
+  #welcome {
+    display: block;
+    ba
+  }
+
+  #log-out {
+    display: block;
+  }
+
+
+  #welcome_container, .home-link{
+    font-size: 3vh;
+  }
+
+  h3 {
+    font-size: 5vh;
+  }
+
+  .robots-secion {
+    font-size: 3vh;
+    border: grey;
+  }
+
+
+}
+
+@media screen and (max-width: 300px) and (min-width: 10px) {
+
+  .home-container {
+    border: none;
+  }
+
+  .button {
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-grid;
+    font-size: 10pt;
+  }
+
 }
