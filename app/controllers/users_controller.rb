@@ -27,12 +27,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:notice] = "Changes saved!"
-      redirect_to robots_path
+    if logged_in?
+      @user = User.find(params[:id])
+      if @user.update_attributes(user_params)
+        flash[:notice] = "Changes saved!"
+        redirect_to robots_path
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to '/'
     end
   end
 
