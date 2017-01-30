@@ -15,6 +15,9 @@ class RobotsController < ApplicationController
   end
 
   def index_customer
+    if !logged_in?
+      redirect_to '/'
+    end
   end
 
   def create
@@ -35,6 +38,10 @@ class RobotsController < ApplicationController
   end
 
   def edit
+    if current_user_commissioner
+    else
+      redirect_to robots_path
+    end
   end
 
   def update
