@@ -58,7 +58,7 @@ describe RobotsController do
       end
     end
 
-    describe 'GET #index when not logged in' do
+    describe 'GET #index and #index_customer when not logged in' do
       it 'redirects back to the root path' do
         get :index
         expect(response).to redirect_to '/'
@@ -66,6 +66,16 @@ describe RobotsController do
 
       it 'responds with status code 302' do
         get :index
+        expect(response).to have_http_status 302
+      end
+
+      it 'redirects back to the root path' do
+        get :index_customer
+        expect(response).to redirect_to '/'
+      end
+
+      it 'responds with status code 302' do
+        get :index_customer
         expect(response).to have_http_status 302
       end
     end
@@ -156,6 +166,24 @@ describe RobotsController do
         expect(response).to render_template('edit')
       end
     end
+
+    context 'admin isn\'t logged in' do
+      let(:user) { create(:user) }
+
+      before :each do
+        request.session[:user_id] = user.id
+      end
+
+      it 'responds with status code 302' do
+        get :edit, params: {id: robot.id}
+        expect(response).to have_http_status 302
+      end
+
+      it 'redirects to robots_path' do
+        get :edit, params: {id: robot.id}
+        expect(response).to redirect_to robots_path
+      end
+    end
   end
 
   context 'DELETE #destroy' do
@@ -183,9 +211,9 @@ describe RobotsController do
         expect{delete :destroy, params: {id: robot.id}}.to change{Robot.count}.from(1).to(0)
       end
 
-      it 'sets the flash success notice' do
+      it 'sets the flash info notice' do
         delete :destroy, params: {id: robot.id}
-        expect(request.flash[:success]).to_not be_nil
+        expect(request.flash[:info]).to_not be_nil
       end
     end
 
