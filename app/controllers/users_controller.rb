@@ -20,11 +20,21 @@ class UsersController < ApplicationController
 
   def edit
     if logged_in?
+      @user = User.find(params[:id])
     else
       redirect_to '/'
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:notice] = "Changes saved!"
+      redirect_to robots_path
+    else
+      render 'edit'
+    end
+  end
 
   private
     def user_params
