@@ -134,19 +134,27 @@ describe RobotsController do
   end
 
   context 'GET #edit' do
-    it 'assigns @robot to a robot' do
-      get :edit, params: {id: robot.id}
-      expect(assigns(:robot)).to eq robot
-    end
+    context 'admin is logged in' do
+      let(:user) { create(:admin) }
 
-    it 'responds with status code 200' do
-      get :edit, params: {id: robot.id}
-      expect(response).to have_http_status 200
-    end
+      before :each do
+        request.session[:user_id] = user.id
+      end
 
-    it 'renders the :edit template' do
-      get :edit, params: {id: robot.id}
-      expect(response).to render_template('edit')
+      it 'assigns @robot to a robot' do
+        get :edit, params: {id: robot.id}
+        expect(assigns(:robot)).to eq robot
+      end
+
+      it 'responds with status code 200' do
+        get :edit, params: {id: robot.id}
+        expect(response).to have_http_status 200
+      end
+
+      it 'renders the :edit template' do
+        get :edit, params: {id: robot.id}
+        expect(response).to render_template('edit')
+      end
     end
   end
 
