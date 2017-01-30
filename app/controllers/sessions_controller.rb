@@ -13,16 +13,17 @@ class SessionsController < ApplicationController
       if current_user_commissioner
         redirect_to robots_path
       else
-         redirect_to index_customer_path
+        redirect_to index_customer_path
       end
     else
-      flash[:notice] = "You must be logged in with proper credentials"
+      flash[:danger] = "You must be logged in with proper credentials"
       render 'new'
     end
   end
 
   def destroy
     log_out
+    flash[:success] = "You are now logged out."
     redirect_to '/'
   end
 

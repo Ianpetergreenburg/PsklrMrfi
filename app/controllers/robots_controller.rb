@@ -52,7 +52,7 @@ class RobotsController < ApplicationController
   def destroy
     if current_user
       if !current_user_commissioner
-        flash[:success] = "Check your email for your purchase confirmation"
+        flash[:info] = "Check your email for your purchase confirmation"
         PurchaseMailer.purchase_email(current_user, @robot).deliver
       end
       @robot.destroy
