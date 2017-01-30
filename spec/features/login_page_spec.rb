@@ -12,6 +12,6 @@ feature 'visiting the login page' do
     visit '/login'
     fill_in('Username', :with => user.username)
     fill_in('Password', :with => attributes_for(:user)[:password])
-    expect(page).to have_css('div.login_form')
+    expect(page).to have_css('div.welcome_container')
   end
 end
