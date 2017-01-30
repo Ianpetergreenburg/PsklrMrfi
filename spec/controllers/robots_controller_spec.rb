@@ -151,27 +151,81 @@ describe RobotsController do
   end
 
   context 'DELETE #destroy' do
-    before :each do
-      user = create(:user)
-      request.session[:user_id] = user.id
-    end
-    it 'assigns @robot to a robot' do
-      delete :destroy, params: {id: robot.id}
-      expect(assigns(:robot)).to eq robot
+    context 'when a normal user is logged in' do
+      before :each do
+        user = create(:user)
+        request.session[:user_id] = user.id
+      end
+      it 'assigns @robot to a robot' do
+        delete :destroy, params: {id: robot.id}
+        expect(assigns(:robot)).to eq robot
+      end
+
+      it 'responds with status code 302' do
+        delete :destroy, params: {id: robot.id}
+        expect(response).to have_http_status 302
+      end
+
+      it 'redirects to index page' do
+        delete :destroy, params: {id: robot.id}
+        expect(response).to redirect_to robots_path
+      end
+
+      it 'deletes the given robot from the system' do
+        expect{delete :destroy, params: {id: robot.id}}.to change{Robot.count}.from(1).to(0)
+      end
+
+      it 'sets the flash success notice' do
+        delete :destroy, params: {id: robot.id}
+        expect(request.flash[:success]).to_not be_nil
+      end
     end
 
-    it 'responds with status code 302' do
-      delete :destroy, params: {id: robot.id}
-      expect(response).to have_http_status 302
+    context 'when an admin user is logged in' do
+      before :each do
+        user = create(:admin)
+        request.session[:user_id] = user.id
+      end
+
+      it 'assigns @robot to a robot' do
+        delete :destroy, params: {id: robot.id}
+        expect(assigns(:robot)).to eq robot
+      end
+
+      it 'responds with status code 302' do
+        delete :destroy, params: {id: robot.id}
+        expect(response).to have_http_status 302
+      end
+
+      it 'redirects to index page' do
+        delete :destroy, params: {id: robot.id}
+        expect(response).to redirect_to robots_path
+      end
+
+      it 'deletes the given robot from the system' do
+        expect{delete :destroy, params: {id: robot.id}}.to change{Robot.count}.from(1).to(0)
+      end
+
+      it 'doesn\'t set the flash success notice' do
+        delete :destroy, params: {id: robot.id}
+        expect(request.flash[:success]).to be_nil
+      end
     end
 
-    it 'redirects to index page' do
-      delete :destroy, params: {id: robot.id}
-      expect(response).to redirect_to robots_path
-    end
+    context 'when no user is logged in' do
+      it 'responds with status code 302' do
+        delete :destroy, params: {id: robot.id}
+        expect(response).to have_http_status 302
+      end
 
-    it 'deletes the given robot from the system' do
-      expect{delete :destroy, params: {id: robot.id}}.to change{Robot.count}.from(1).to(0)
+      it 'redirects to home page' do
+        delete :destroy, params: {id: robot.id}
+        expect(response).to redirect_to '/'
+      end
+
+      it 'doesn\'t delete the given robot from the system' do
+        expect{delete :destroy, params: {id: robot.id}}.not_to change{Robot.count}
+      end
     end
   end
 
