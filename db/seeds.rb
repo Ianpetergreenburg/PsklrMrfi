@@ -23,6 +23,7 @@ User.delete_all
 User.create(first_name: "George William", last_name: "Rutherford IV", email: "portal_catcher@bsalt.future", username: 'the_commish', password: 'mutantkiller', admin: true)
 User.create(first_name: "Tammy", last_name: "Tammers", email: "tammy@tamtam.tam", username: 'not_the_commish', password: 'pw')
 
+
 @manufacturers = HTTParty.get("http://jordankamin.com/robots_api/robots.json")
 
 @manufacturers.parsed_response["manufacturers"].each do |man|

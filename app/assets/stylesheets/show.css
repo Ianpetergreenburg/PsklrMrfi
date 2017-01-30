@@ -23,6 +23,8 @@
   padding-top: 1em;
   padding-bottom: 1em;
   margin-bottom: .5em;
+  font-kerning: normal;
+  text-rendering: optimizeSpeed;
 }
 
 ul {
@@ -35,6 +37,10 @@ ul {
   margin-top: .3em
 }
 
+.centered {
+  margin: 0 auto;
+}
+
 .individual-item-container {
   text-align: center;
   width: 45%;
@@ -43,7 +49,7 @@ ul {
   border: solid 2px black;
   border-radius: 10px;
   border-spacing: 10px;
-  background-color: #F6F8DC;
+  background: #e8eef9;
 
 }
 

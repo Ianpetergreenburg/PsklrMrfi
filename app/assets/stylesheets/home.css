@@ -64,6 +64,8 @@ h3 {
   font-size: 13pt;
   margin-left: 5%;
   margin-right: 5%;
+  text-shadow: -1px -1px 0 rgba(0,0,0,.2);
+
 }
 
 .tina-container {
@@ -71,6 +73,8 @@ h3 {
   text-align: center;
   border: solid 1px black;
   padding: 20px;
+  font-weight: 400;
+  text-shadow: -1px -1px 0 rgba(0,0,0,.2);
 
 }
 
@@ -88,6 +92,14 @@ h3 {
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
   font-size: 8pt;
+  text-shadow: -1px -1px 0 rgba(0,0,0,.2);
+}
+
+.nav nav-tabs{
+  padding: 0;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .stealthy-register {
