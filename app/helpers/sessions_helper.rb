@@ -9,7 +9,8 @@ module SessionsHelper
   end
 
   def current_user_commissioner
-    current_user == User.find_by(username: "the_commish")
+    return false unless current_user
+    current_user.admin?
   end
 
 
