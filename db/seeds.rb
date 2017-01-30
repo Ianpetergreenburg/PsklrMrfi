@@ -1,5 +1,5 @@
 require 'faker'
-require 'HTTParty'
+require 'httparty'
 
 def get_attributes_for_robot(prototype)
   attributes = {}
