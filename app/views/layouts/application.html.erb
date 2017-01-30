@@ -23,6 +23,7 @@
     <% if current_user_commissioner || current_user %>
       <div id="welcome_container">
         <p id="welcome"> Welcome, <%= current_user.first_name %> </p> |
+        <%= link_to 'HOME', robots_path, class: 'home-link' %> |
         <%= link_to "Log out", logout_path, method: :delete, id: "log-out" %> |
         <%= link_to "Update Profile", edit_user_path(current_user) %>
       </div>
@@ -34,8 +35,6 @@
   </body>
 
   <div align='center'>
-    <footer>
-    <%= link_to 'HOME', robots_path, class: 'home-link' %>
-    </footer>
+
   </div>
 </html>
